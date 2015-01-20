@@ -32,8 +32,6 @@ minetest.register_on_mapgen_init(function(mgparams)
 	minetest.set_mapgen_params({mgname="singlenode"})
 end)
 
-local lastPos = {x=6.66,y=6.66,z=6.66}
-
 minetest.register_on_generated(function(minp, maxp, seed)
 	local cover, depth, limit = flatgen.cover_y, flatgen.depth, flatgen.limit_y
 	if minp.y > cover then
@@ -45,10 +43,6 @@ minetest.register_on_generated(function(minp, maxp, seed)
 			return
 		end
 	end
-	if vector.equals(minp, lastPos) then
-		return
-	end
-	lastPos = vector.new(minp)
 	
 	local c_cover = minetest.get_content_id(flatgen.cover)
 	local c_under = minetest.get_content_id(flatgen.under)
