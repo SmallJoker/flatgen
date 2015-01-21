@@ -34,6 +34,14 @@ minetest.register_on_mapgen_init(function(mgparams)
 	end
 end)
 
+function vector.floor(v)
+	return {
+		x = math.floor(v.x),
+		y = math.floor(v.y),
+		z = math.floor(v.z)
+	}
+end
+
 minetest.register_chatcommand("regenerate", {
 	description = "Regenerates a (<size>*8)^3 chunk around you",
 	params = "<size>",
