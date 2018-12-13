@@ -23,7 +23,7 @@ end
 minetest.set_mapgen_setting("mg_name", "flat", true)
 minetest.set_mapgen_setting("water_level", "-31000", true)
 minetest.set_mapgen_setting("mg_flags",
-	"light,nocaves,nodungeons,nolight,nodecorations,nobiomes", true)
+	"light,nocaves,nodungeons,nolight,nodecorations", true)
 minetest.set_mapgen_setting("mgflat_spflags", "nolakes,nohills", true)
 minetest.set_mapgen_setting("mgflat_ground_level", tostring(generator_start_y), true)
 
